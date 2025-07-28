@@ -1,13 +1,20 @@
+// This component shows the student info and toggles their bio.
+
 import React from 'react';
 
+// Function component with props - name, major, year, bio, imageUrl
 function StudentCard(props) {
+  // Destructing props
   const { name, major, year, bio, imageUrl } = props;
+  // showBio is a handle, setShowBio is the one to be updated using useState hook
   const [showBio, setShowBio] = React.useState(false);
 
+  // This is the toggle for the bio
   const toggleBio = () => {
     setShowBio(!showBio);
   };
 
+  // Student info rendering from here
   return (
     <div style={{
       maxWidth: '350px',
@@ -44,4 +51,5 @@ function StudentCard(props) {
   );
 }
 
+// Export the component
 export default StudentCard;
